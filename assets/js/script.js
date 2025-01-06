@@ -531,7 +531,7 @@ class ContactForm {
     try {
       const response = await fetch(this.apiUrl, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         cache: 'no-cache',
         headers: {
           'Content-Type': 'application/json',
