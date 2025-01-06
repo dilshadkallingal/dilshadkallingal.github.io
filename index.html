@@ -884,8 +884,10 @@
           </ul>
 
         </div>
+        <!-- 
+        <form action="#" id="contact-form" class="contact-form">
 
-        <!-- <form action="" class="contact-form">
+
 
           <div class="form-wrapper">
 
@@ -948,6 +950,128 @@
           <button type="submit" class="btn btn-primary">Send</button>
 
         </form> -->
+
+        <!-- <form action="#" id="contact-form" class="contact-form">
+          <div class="form-wrapper">
+            <label for="name" class="form-label">Name</label>
+            <div class="input-wrapper">
+              <input type="text" name="name" id="name" required placeholder="e.g Jon Snow" class="input-field"
+                maxlength="50" pattern="[a-zA-Z\s]{2,50}"
+                title="Name should only contain letters and spaces, between 2 and 50 characters">
+              <ion-icon name="person-circle"></ion-icon>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-wrapper">
+              <input type="email" name="email" id="email" required placeholder="e.g jon.snow@winterfell.com"
+                class="input-field" maxlength="100" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                title="Please enter a valid email address">
+              <ion-icon name="mail"></ion-icon>
+            </div>
+          </div>
+
+
+          <div class="form-wrapper">
+            <label for="phone" class="form-label">Phone</label>
+            <div class="input-wrapper">
+              <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field"
+                maxlength="15" pattern="[\d\s\-\+]{10,15}"
+                title="Please enter a valid phone number (10-15 digits, can include spaces, + and -)">
+              <ion-icon name="call"></ion-icon>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label for="message" class="form-label">Message</label>
+            <div class="input-wrapper">
+              <textarea name="message" id="message" required placeholder="Write message..." class="input-field"
+                maxlength="1000" title="Message must be between 1 and 1000 characters"></textarea>
+              <ion-icon name="chatbubbles"></ion-icon>
+            </div>
+          </div>
+ 
+          <div class="hidden">
+            <input type="text" name="honeypot" id="honeypot" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn-primary" data-loading-text="Sending...">
+            Send
+          </button>
+        </form>
+
+        <style>
+          .hidden {
+            display: none;
+            visibility: hidden;
+            position: absolute;
+            left: -9999px;
+          }
+
+          .validation-message {
+            display: none;
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+          }
+
+          .input-field.invalid {
+            border-color: #dc2626;
+          }
+
+          .form-wrapper {
+            margin-bottom: 1rem;
+          }
+        </style> -->
+
+        <form action="#" id="contact-form" class="contact-form">
+          <div class="form-wrapper">
+            <label for="name" class="form-label">Name</label>
+            <div class="input-wrapper">
+              <input type="text" name="name" id="name" required placeholder="e.g Jon Snow" class="input-field"
+                maxlength="50" pattern="[a-zA-Z\s]{2,50}"
+                title="Name should only contain letters and spaces, between 2 and 50 characters">
+              <ion-icon name="person-circle"></ion-icon>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-wrapper">
+              <input type="email" name="email" id="email" required placeholder="e.g jon.snow@winterfell.com"
+                class="input-field" maxlength="100" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                title="Please enter a valid email address">
+              <ion-icon name="mail"></ion-icon>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label for="phone" class="form-label">Phone</label>
+            <div class="input-wrapper">
+              <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field"
+                maxlength="15" pattern="[\d\s\-\+]{10,15}"
+                title="Please enter a valid phone number (10-15 digits, can include spaces, + and -)">
+              <ion-icon name="call"></ion-icon>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label for="message" class="form-label">Message</label>
+            <div class="input-wrapper">
+              <textarea name="message" id="message" required placeholder="Write message..." class="input-field"
+                maxlength="1000" title="Message must be between 1 and 1000 characters"></textarea>
+              <ion-icon name="chatbubbles"></ion-icon>
+            </div>
+          </div>
+
+          <!-- Honeypot field -->
+          <div class="hidden">
+            <input type="text" name="honeypot" id="honeypot" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
 
       </section>
 
