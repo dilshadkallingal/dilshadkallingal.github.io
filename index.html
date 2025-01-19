@@ -16,6 +16,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+
 
   <!-- 
     - custom css link
@@ -31,6 +33,8 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
     rel="stylesheet">
 </head>
+
+<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 
 <body id="top" class="dark_theme">
 
@@ -801,7 +805,7 @@
               <div class="wrapper">
                 <h3 class="h4 contact-item-title">Phone:</h3>
 
-                <a href="tel:+919656561586" class="contact-info">(+91) 9656561586</a>
+                <a href="tel:+919656561586" class="contact-info">+91 9656561586</a>
 
                 <!-- <a href="tel:09765432200" class="contact-info">(09) 765 432 200</a> -->
               </div>
@@ -1025,8 +1029,10 @@
           }
         </style> -->
 
-        <form action="#" id="contact-form" class="contact-form">
-          <div class="form-wrapper">
+        <!-- <form action="#" id="contact-form" class="contact-form"> -->
+
+          <form action="https://send.pageclip.co/6GE3Kt3mqVOndYSP8B05PYXKaAE7E8AN/contact-form" class="contact-form" method="post">
+          <!-- <div class="form-wrapper">
             <label for="name" class="form-label">Name</label>
             <div class="input-wrapper">
               <input type="text" name="name" id="name" required placeholder="e.g Jon Snow" class="input-field"
@@ -1064,13 +1070,17 @@
               <ion-icon name="chatbubbles"></ion-icon>
             </div>
           </div>
-
-          <!-- Honeypot field -->
+ 
           <div class="hidden">
             <input type="text" name="honeypot" id="honeypot" tabindex="-1" autocomplete="off">
           </div>
 
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" class="btn btn-primary">Send</button> -->
+          <input type="email" name="email" value="roscoe@example.com" />
+          <input type="text" name="subject" value="A contact subject" />
+          <button type="submit" class="pageclip-form__submit">
+            <span>Send</span>
+          </button>
         </form>
 
       </section>

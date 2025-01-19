@@ -462,146 +462,146 @@ function downloadCvPDF() {
 
 
 
-class ContactForm {
-  constructor(formId) {
-    this.form = document.getElementById(formId);
-    this.submitButton = this.form.querySelector('button[type="submit"]');
-    this.validator = {
-      email: (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
-      phone: (phone) => /^\+?[\d\s-]{10,15}$/.test(phone),
-      name: (name) => /^[a-zA-Z\s]{2,50}$/.test(name),
-      message: (message) => message.length <= 1000 && message.trim().length > 0
-    };
-    this.apiUrl = "https://script.google.com/macros/s/AKfycbwcoYUKZAww-TtubiwNAL-MNo9DfN_X8qM3bfe84F-yWZ6U2m6NPIhCr3HOdZumAXC8pw/exec";
-    this.setupFormValidation();
-    this.setupSubmitHandler();
-  }
+// class ContactForm {
+//   constructor(formId) {
+//     this.form = document.getElementById(formId);
+//     this.submitButton = this.form.querySelector('button[type="submit"]');
+//     this.validator = {
+//       email: (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+//       phone: (phone) => /^\+?[\d\s-]{10,15}$/.test(phone),
+//       name: (name) => /^[a-zA-Z\s]{2,50}$/.test(name),
+//       message: (message) => message.length <= 1000 && message.trim().length > 0
+//     };
+//     this.apiUrl = "https://script.google.com/macros/s/AKfycbwcoYUKZAww-TtubiwNAL-MNo9DfN_X8qM3bfe84F-yWZ6U2m6NPIhCr3HOdZumAXC8pw/exec";
+//     this.setupFormValidation();
+//     this.setupSubmitHandler();
+//   }
 
-  setupFormValidation() {
-    const inputs = this.form.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
-      input.addEventListener('input', () => {
-        this.validateField(input);
-      });
-    });
-  }
+//   setupFormValidation() {
+//     const inputs = this.form.querySelectorAll('input, textarea');
+//     inputs.forEach(input => {
+//       input.addEventListener('input', () => {
+//         this.validateField(input);
+//       });
+//     });
+//   }
 
-  validateField(input) {
-    const value = input.value.trim();
-    const validationMessage = input.parentElement.querySelector('.validation-message')
-      || this.createValidationMessage(input);
+//   validateField(input) {
+//     const value = input.value.trim();
+//     const validationMessage = input.parentElement.querySelector('.validation-message')
+//       || this.createValidationMessage(input);
 
-    if (input.name === 'honeypot') return true;
+//     if (input.name === 'honeypot') return true;
 
-    if (!this.validator[input.name]?.(value)) {
-      input.classList.add('invalid');
-      validationMessage.textContent = this.getErrorMessage(input.name);
-      validationMessage.style.display = 'block';
-      return false;
-    }
+//     if (!this.validator[input.name]?.(value)) {
+//       input.classList.add('invalid');
+//       validationMessage.textContent = this.getErrorMessage(input.name);
+//       validationMessage.style.display = 'block';
+//       return false;
+//     }
 
-    input.classList.remove('invalid');
-    validationMessage.style.display = 'none';
-    return true;
-  }
+//     input.classList.remove('invalid');
+//     validationMessage.style.display = 'none';
+//     return true;
+//   }
 
-  createValidationMessage(input) {
-    const message = document.createElement('div');
-    message.className = 'validation-message';
-    input.parentElement.appendChild(message);
-    return message;
-  }
+//   createValidationMessage(input) {
+//     const message = document.createElement('div');
+//     message.className = 'validation-message';
+//     input.parentElement.appendChild(message);
+//     return message;
+//   }
 
-  getErrorMessage(fieldName) {
-    const messages = {
-      name: 'Name should only contain letters and be 2-50 characters long',
-      email: 'Please enter a valid email address',
-      phone: 'Please enter a valid phone number (10-15 digits)',
-      message: 'Message should be between 1 and 1000 characters'
-    };
-    return messages[fieldName] || 'Invalid input';
-  }
+//   getErrorMessage(fieldName) {
+//     const messages = {
+//       name: 'Name should only contain letters and be 2-50 characters long',
+//       email: 'Please enter a valid email address',
+//       phone: 'Please enter a valid phone number (10-15 digits)',
+//       message: 'Message should be between 1 and 1000 characters'
+//     };
+//     return messages[fieldName] || 'Invalid input';
+//   }
 
-  validateForm() {
-    const inputs = this.form.querySelectorAll('input:not([name="honeypot"]), textarea');
-    return Array.from(inputs).every(input => this.validateField(input));
-  }
+//   validateForm() {
+//     const inputs = this.form.querySelectorAll('input:not([name="honeypot"]), textarea');
+//     return Array.from(inputs).every(input => this.validateField(input));
+//   }
 
-  async submitForm(formData) {
-    try {
-      const response = await fetch(this.apiUrl, {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+//   async submitForm(formData) {
+//     try {
+//       const response = await fetch(this.apiUrl, {
+//         method: 'POST',
+//         mode: 'cors',
+//         cache: 'no-cache',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(formData)
+//       });
 
-      // Handle no-cors mode response
-      if (response.type === 'opaque') {
-        // Google Apps Script in no-cors mode always returns opaque response
-        return { status: 'success', message: 'Form submitted successfully' };
-      }
+//       // Handle no-cors mode response
+//       if (response.type === 'opaque') {
+//         // Google Apps Script in no-cors mode always returns opaque response
+//         return { status: 'success', message: 'Form submitted successfully' };
+//       }
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+//       if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//       }
 
-      const result = await response.json();
-      return result;
-    } catch (error) {
-      console.error('Submission error:', error);
-      throw new Error('Failed to submit form');
-    }
-  }
+//       const result = await response.json();
+//       return result;
+//     } catch (error) {
+//       console.error('Submission error:', error);
+//       throw new Error('Failed to submit form');
+//     }
+//   }
 
-  setupSubmitHandler() {
-    this.form.addEventListener('submit', async (event) => {
-      event.preventDefault();
+//   setupSubmitHandler() {
+//     this.form.addEventListener('submit', async (event) => {
+//       event.preventDefault();
 
-      // Check honeypot
-      if (this.form.querySelector('#honeypot').value) {
-        return;
-      }
+//       // Check honeypot
+//       if (this.form.querySelector('#honeypot').value) {
+//         return;
+//       }
 
-      if (!this.validateForm()) {
-        alert('Please fix the errors in the form');
-        return;
-      }
+//       if (!this.validateForm()) {
+//         alert('Please fix the errors in the form');
+//         return;
+//       }
 
-      this.submitButton.disabled = true;
-      this.submitButton.textContent = 'Sending...';
+//       this.submitButton.disabled = true;
+//       this.submitButton.textContent = 'Sending...';
 
-      try {
-        const formData = {
-          name: this.form.name.value.trim(),
-          email: this.form.email.value.trim(),
-          phone: this.form.phone.value.trim(),
-          message: this.form.message.value.trim(),
-        };
+//       try {
+//         const formData = {
+//           name: this.form.name.value.trim(),
+//           email: this.form.email.value.trim(),
+//           phone: this.form.phone.value.trim(),
+//           message: this.form.message.value.trim(),
+//         };
 
-        const result = await this.submitForm(formData);
+//         const result = await this.submitForm(formData);
 
-        if (result.status === 'success') {
-          alert('Message sent successfully!');
-          this.form.reset();
-        } else {
-          throw new Error(result.message || 'Submission failed');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Error sending message. Please try again later.');
-      } finally {
-        this.submitButton.disabled = false;
-        this.submitButton.textContent = 'Send';
-      }
-    });
-  }
-}
+//         if (result.status === 'success') {
+//           alert('Message sent successfully!');
+//           this.form.reset();
+//         } else {
+//           throw new Error(result.message || 'Submission failed');
+//         }
+//       } catch (error) {
+//         console.error('Error:', error);
+//         alert('Error sending message. Please try again later.');
+//       } finally {
+//         this.submitButton.disabled = false;
+//         this.submitButton.textContent = 'Send';
+//       }
+//     });
+//   }
+// }
 
-// Initialize the form handler
-document.addEventListener('DOMContentLoaded', () => {
-  new ContactForm('contact-form');
-});
+// // Initialize the form handler
+// document.addEventListener('DOMContentLoaded', () => {
+//   new ContactForm('contact-form');
+// });
