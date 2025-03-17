@@ -108,7 +108,7 @@ if (localStorage.getItem("theme") === "light_theme") {
 
 function downloadCvPDF() {
   // Google Docs export URL for PDF download
-  var id = '1yK6g12_h-m3RoM9BXBTU32Io45unjcAA';
+  var id = '15CNIyj8v43wxH3mcy__aZDq1ksUf1hx3';
   var url = 'https://drive.google.com/uc?export=download&id=' + id;
   window.location.href = url;
 }
