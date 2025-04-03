@@ -440,8 +440,16 @@
             </p>
 
             <p class="copyright">
-                &copy; 2024 <a href="../">Dilshad Kallingal</a>. All rights reserved
+                &copy; <span id="year"></span>  <a href="../">Dilshad Kallingal</a>  
             </p>
+              
+              <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+              </script> 
+
+            <!-- <p class="copyright">
+                &copy; 2024 <a href="../">Dilshad Kallingal</a>. All rights reserved
+            </p> -->
         </div>
     </footer>
     <a href="#top" class="go-top" data-go-top title="Go to Top">
