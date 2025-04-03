@@ -985,6 +985,9 @@ textarea.input-field {
   color: var(--raw-seinna);
 }
 
+#year {
+  display: inline;
+}
 
 
 
