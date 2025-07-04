@@ -1,0 +1,22 @@
+# macOS system files
+.DS_Store
+
+# Node.js dependencies (if you use npm or yarn)
+node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Build or distribution folders (if you use any build tools)
+dist/
+build/
+
+# Editor folders (VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+
+# OS generated files
+Thumbs.db
