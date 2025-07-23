@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilshad Kallingal - Senior Flutter Developer</title>
+
+    <!-- favicon section -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Dilshad Kallingal" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- favicon section -->
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            max-width: 8.27in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 1pt;
+        }
+
+        .header .title {
+            font-size: 10pt;
+            margin-bottom: 2pt;
+        }
+
+        .header .contact {
+            font-size: 10pt;
+            margin-bottom: 1pt;
+        }
+
+        .header .location {
+            font-size: 10pt;
+        }
+
+        .header a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 12pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+        }
+
+        .summary {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .skills-grid {
+            margin-bottom: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 6pt;
+        }
+
+        .skill-category strong {
+            font-weight: bold;
+        }
+
+        .experience-item {
+            margin-bottom: 15px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2px;
+        }
+
+        .experience-title {
+            font-weight: bold;
+        }
+
+        .experience-date {
+            font-weight: normal;
+        }
+
+        .experience-subtitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list li {
+            margin-bottom: 4px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .experience-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .education-degree {
+            font-weight: bold;
+        }
+
+        .education-year {
+            font-weight: normal;
+        }
+
+        .education-school {
+            font-style: italic;
+        }
+
+        .education-location {
+            font-style: italic;
+        }
+
+        .languages-list, .certifications-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .languages-list li, .certifications-list li {
+            margin-bottom: 4px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .languages-list li:before, .certifications-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .cert-link {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .cert-title {
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .cert-provider {
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+
+        @media print {
+            body {
+                max-width: none;
+                margin: 0;
+                padding: 0.5in;
+                font-size: 9pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Dilshad Kallingal</h1>
+        <div class="title">Senior Flutter Developer</div>
+        <div class="contact">
+            <a href="tel:+97471217292">+974 7121 7292</a> | 
+            <a href="mailto:mail@dilshadkallingal.com">mail@dilshadkallingal.com</a> | 
+            <a href="https://linkedin.com/in/dilshadkallingal">linkedin.com/in/dilshadkallingal</a> | 
+            <a href="https://dilshadkallingal.com">dilshadkallingal.com</a>
+        </div>
+        <div class="location">Ain Khaled, Qatar</div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+            Senior Flutter Developer with 7 years of comprehensive experience designing, developing, and deploying cross-platform mobile applications with a focus on performance, scalability, and maintainability. Adept at collaborating across teams, mentoring developers, and driving full product lifecycle from concept to launch. Skilled in modern Flutter architectures, state management, and agile methodologies.
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <div class="section-title">Skills</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Technical Skills:</strong> Dart, Kotlin, Swift, Flutter, Firebase, Provider, Riverpod, Bloc, GetX, Redux, RxDart, Material Design, Cupertino Widgets, RESTful APIs, SQLite, Git (GitHub, GitLab, Bitbucket), VS Code, Android Studio, Xcode
+            </div>
+            <div class="skill-category">
+                <strong>Tools:</strong> Postman, Jira, Trello, Firebase Console, CI/CD (GitHub Actions, Bitrise), Google Play Store, Apple App Store
+            </div>
+            <div class="skill-category">
+                <strong>Operational Skills:</strong> Agile & Scrum, Cross-team Collaboration, Time Management, Problem-solving, Debugging
+            </div>
+            <div class="skill-category">
+                <strong>Organizational & Leadership Skills:</strong> Cross-functional Team Leadership, Stakeholder Management, Budgeting & Resource Allocation, Strategic Planning, Process Improvement, Risk Management, Team Collaboration & Mentoring, Vendor Management, Operations Optimization
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Senior Flutter Developer | Zensign LLP</div>
+                <div class="experience-date">Nov 2023 -- Feb 2025</div>
+            </div>
+            <div class="experience-subtitle">
+                <div>Client: UK-based Client</div>
+                <div>Project: SaleWise POS</div>
+            </div>
+            <ul class="experience-list">
+                <li>Architected and developed a highly responsive Point of Sale (POS) system with Flutter targeting retail businesses, enhancing billing speed by 40% and reducing inventory discrepancies by 35%.</li>
+                <li>Led integration of real-time stock synchronization leveraging Firebase Cloud Firestore and RESTful APIs, ensuring seamless data consistency across online environments.</li>
+                <li>Implemented advanced state management with RxDart streams to handle complex UI state transitions and asynchronous data flows.</li>
+                <li>Collaborated closely with UI/UX designers to produce a clean, intuitive user interface compliant with Material Design guidelines.</li>
+                <li>Conducted code reviews and enforced best practices to ensure maintainability and scalability across the development team of 5 engineers.</li>
+                <li>Worked with product managers and stakeholders in agile ceremonies to refine feature scope and deliver incremental releases.</li>
+                <li>Mentored junior developers, running internal workshops on Flutter advanced concepts and effective debugging strategies.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Senior Flutter Developer | Zensign LLP</div>
+                <div class="experience-date">May 2023 -- Nov 2023</div>
+            </div>
+            <div class="experience-subtitle">
+                <div>Client: Ram Clinics (Saudi Arabia)</div>
+                <div>Project: Ram Clinics Booking App</div>
+            </div>
+            <ul class="experience-list">
+                <li>Directed full-stack mobile development for a healthcare appointment booking app, improving booking conversion rates by 30% through enhanced UX/UI redesign and push notification reminders.</li>
+                <li>Designed and implemented robust booking, calendar, and payment modules ensuring security and usability across Android and iOS platforms.</li>
+                <li>Integrated Firebase Authentication and Firestore for secure user management and real-time appointment data syncing.</li>
+                <li>Collaborated with cross-functional teams including backend engineers, QA, and marketing for timely release cycles under Agile Scrum methodology.</li>
+                <li>Produced detailed technical documentation and API integration guides for seamless coordination with backend teams.</li>
+                <li>Handled app deployment processes on Google Play and Apple App Store, including compliance with respective platform guidelines and certification.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Flutter Developer | Devmonkey Inc</div>
+                <div class="experience-date">Oct 2022 -- Apr 2023</div>
+            </div>
+            <div class="experience-subtitle">
+                <div>Client: Windmill General Trading LLC (UAE)</div>
+                <div>Project: Windmill Cellar</div>
+            </div>
+            <ul class="experience-list">
+                <li>Designed and built an e-commerce mobile application for liquor retail with Flutter, delivering a smooth, performant shopping experience that significantly increased user engagement and sales.</li>
+                <li>Implemented complex product catalog and order tracking features with Riverpod for scalable state management and Firebase backend integration.</li>
+                <li>Worked closely with UX/UI designers to ensure pixel-perfect, responsive design, and cross-device compatibility.</li>
+                <li>Optimized app performance by profiling and reducing rendering time, memory usage, and network calls.</li>
+                <li>Set up continuous integration pipelines using Bitrise to automate testing and deployment workflows.</li>
+                <li>Engaged in daily standups, sprint planning, and retrospectives to maintain efficient Agile development rhythm.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Flutter Developer | Devmonkey Inc</div>
+                <div class="experience-date">Feb 2021 -- Oct 2022</div>
+            </div>
+            <div class="experience-subtitle">
+                <div>Client: Spancom Technologies Pvt. Ltd (UAE)</div>
+                <div>Project: Spancom POS</div>
+            </div>
+            <ul class="experience-list">
+                <li>Developed an offline-first Android POS application featuring inventory management and billing automation, enabling uninterrupted operation in low connectivity environments.</li>
+                <li>Designed a synchronization engine syncing local SQLite database with Firebase Cloud, ensuring data integrity and near real-time updates across devices.</li>
+                <li>Automated key workflows reducing manual input and errors by 50%, improving operational efficiency for retail clients.</li>
+                <li>Led collaboration efforts with a 5-member team, managing sprint backlogs and task assignments to meet tight deadlines.</li>
+                <li>Provided thorough unit and integration tests coverage to ensure application reliability and reduce production defects.</li>
+                <li>Authored comprehensive developer documentation and facilitated onboarding for new hires.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Flutter Developer | Talkomi Inc</div>
+                <div class="experience-date">Feb 2019 -- Feb 2021</div>
+            </div>
+            <div class="experience-subtitle">
+                <div>Client: Talkomi Inc (USA)</div>
+                <div>Project: Talkomi App</div>
+            </div>
+            <ul class="experience-list">
+                <li>Developed a feature-rich social networking app for food enthusiasts, supporting real-time updates, media sharing, and interactive user feeds.</li>
+                <li>Integrated Firebase Realtime Database and cloud functions for seamless data syncing and background processing.</li>
+                <li>Enhanced UI responsiveness and user engagement by implementing efficient state management using Provider and optimizing animations.</li>
+                <li>Implemented robust error handling and analytics integration to monitor app health and user behavior.</li>
+                <li>Worked in a globally distributed 7-member team using Agile tools like Jira and GitLab for version control and issue tracking.</li>
+                <li>Contributed to cross-platform feature parity by aligning iOS and Android builds with consistent UI/UX.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Freelance Flutter Developer</div>
+                <div class="experience-date">Jan 2018 -- Feb 2019</div>
+            </div>
+            <div class="experience-subtitle">
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="experience-list">
+                <li>Designed, developed, and maintained custom Flutter applications tailored for SMEs including feedback systems, task managers, and client-specific utilities.</li>
+                <li>Self-initiated learning of Flutter and Dart technologies, successfully delivering full-cycle mobile app development projects independently.</li>
+                <li>Provided ongoing maintenance, feature enhancements, and performance tuning based on client feedback.</li>
+                <li>Built strong client relationships by delivering quality solutions on time and within budget.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="education-item">
+            <div>
+                <div class="education-degree">B.Tech in Computer Science</div>
+                <div class="education-school">Calicut University</div>
+            </div>
+            <div>
+                <div class="education-year">2017</div>
+                <div class="education-location">India</div>
+            </div>
+        </div>
+        <div class="education-item">
+            <div>
+                <div class="education-degree">Higher Secondary</div>
+                <div class="education-school">S.V.H.S.S Palemad</div>
+            </div>
+            <div>
+                <div class="education-year">2012</div>
+                <div class="education-location">India</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="section">
+        <div class="section-title">Languages</div>
+        <ul class="languages-list">
+            <li>English</li>
+        </ul>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        <ul class="certifications-list">
+            <li>
+                <div class="cert-item">
+                    <div class="cert-title">Flutter & Dart - The Complete Guide [2025 Edition]</div>
+                    <div class="cert-provider">Udemy, 2025</div>
+                </div>
+                <a href="https://www.udemy.com/certificate/UC-4NV1CAS6/" class="cert-link">Certificate Link</a>
+            </li>
+            <li>
+                <div class="cert-item">
+                    <div class="cert-title">Dart and Flutter: The Complete Developer's Guide</div>
+                    <div class="cert-provider">Udemy, 2025</div>
+                </div>
+                <a href="https://www.udemy.com/certificate/UC-JIP41B40/" class="cert-link">Certificate Link</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
