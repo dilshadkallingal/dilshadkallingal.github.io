@@ -259,6 +259,40 @@
             color: var(--color-secondary);
         }
 
+        .cv-download-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 80px;
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            color: var(--bg-secondary);
+            border: 2px solid var(--sizzling-sunrise);
+            border-radius: 50%;
+            background-color: var(--sizzling-sunrise);
+            box-shadow: var(--shadow-1);
+            transition: var(--transition-1);
+            z-index: 2;
+        }
+
+        .cv-download-btn:hover,
+        .cv-download-btn:focus {
+            background-color: var(--raw-seinna);
+            border-color: var(--raw-seinna);
+            color: var(--bg-secondary);
+        }
+
+        .cv-download-btn:focus-visible {
+            outline: 2px solid var(--raw-seinna);
+            outline-offset: 3px;
+        }
+
+        .cv-download-btn ion-icon {
+            pointer-events: none;
+        }
+
         @media print {
             .header {
                 display: none !important;
@@ -315,6 +349,10 @@
             .cv-cert-link {
                 color: #0000EE !important;
             }
+
+            .cv-download-btn {
+                display: none !important;
+            }
         }
 
         /* Responsive adjustments */
@@ -352,6 +390,10 @@
             .cv-cert-provider {
                 margin-left: 0;
                 margin-top: 2px;
+            }
+
+            .cv-download-btn {
+                right: 70px;
             }
         }
 
@@ -641,7 +683,10 @@
         </div>
     </div>
 
-    <!-- Go to top button -->
+    <!-- Quick action buttons -->
+    <button type="button" class="cv-download-btn" onclick="downloadCvPDF()" aria-label="Download CV" title="Download CV">
+        <ion-icon name="download-outline"></ion-icon>
+    </button>
     <a href="#top" class="go-top" data-go-top title="Go to Top">
         <ion-icon name="arrow-up"></ion-icon>
     </a>
