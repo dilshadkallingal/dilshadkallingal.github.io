@@ -1,468 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ram Clinics App | Streamlined Healthcare Booking</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ram Clinics, a Flutter booking app / Dilshad Kallingal</title>
+  <meta name="description" content="Ram Clinics is a healthcare booking app for clinics across Saudi Arabia, built in Flutter. Bookings rose 30% after launch. Case study by Dilshad Kallingal.">
+  <link rel="canonical" href="https://dilshadkallingal.com/projects/ram.html">
+  <meta name="author" content="Dilshad Kallingal">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dilshad Kallingal">
+  <meta property="og:title" content="Ram Clinics, a Flutter booking app / Dilshad Kallingal">
+  <meta property="og:description" content="Ram Clinics is a healthcare booking app for clinics across Saudi Arabia, built in Flutter. Bookings rose 30% after launch. Case study by Dilshad Kallingal.">
+  <meta property="og:url" content="https://dilshadkallingal.com/projects/ram.html">
+  <meta property="og:image" content="https://dilshadkallingal.com/assets/images/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dilshad Kallingal keystone mark">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11100e" media="(prefers-color-scheme: dark)">
 
-     <!-- favicon section -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Dilshad Kallingal" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <!-- favicon section -->
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Dilshad Kallingal">
+  <link rel="manifest" href="../site.webmanifest">
 
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/motion.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
 
-    <!-- 
-    - custom css link
-  -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-    <!-- 
-    - google font link
-  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
-        rel="stylesheet">
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "@id": "https://dilshadkallingal.com/projects/ram.html#work",
+        "name": "Ram Clinics",
+        "headline": "Ram Clinics",
+        "description": "Ram Clinics is a healthcare booking app for clinics across Saudi Arabia, built in Flutter. Bookings rose 30% after launch. Case study by Dilshad Kallingal.",
+        "url": "https://dilshadkallingal.com/projects/ram.html",
+        "inLanguage": "en",
+        "creator": { "@id": "https://dilshadkallingal.com/#person", "@type": "Person", "name": "Dilshad Kallingal", "url": "https://dilshadkallingal.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dilshadkallingal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://dilshadkallingal.com/#work" },
+          { "@type": "ListItem", "position": 3, "name": "Ram Clinics", "item": "https://dilshadkallingal.com/projects/ram.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-
-<body id="top" class="dark_theme">
-
-
-    <header class="header" data-header>
-        <div class="container">
-
-            <h1 class="h1 logo">
-                <a href="../">Dk<span>.</span></a>
-            </h1>
-
-            <div class="navbar-actions">
-
-
-
-                <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
-                    <span class="icon"></span>
-                </button>
-
-            </div>
-
-            <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
-                <span class="one"></span>
-                <span class="two"></span>
-                <span class="three"></span>
-            </button>
-
-            <nav class="navbar" data-navbar>
-                <ul class="navbar-list">
-
-                    <li>
-                        <a href="../" class="navbar-link">Home.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#about" class="navbar-link">About.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#skills" class="navbar-link">Skills.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#portfolio" class="navbar-link">Portfolio.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#contact" class="navbar-link">Contact.</a>
-                    </li>
-
-                </ul>
-            </nav>
-
-        </div>
-    </header>
-
-
-
-
-
-    <article class="container">
-
-        <!-- 
-        - #HERO
-      -->
-
-        <div style="height: 40px;"></div>
-
-
-        <!-- <section class="hero" id="home">
-
-            <figure class="hero-banner">
-
-                <picture>
-                    <source srcset="../assets/images/ram.jpg" media="(min-width: 768px)">
-                    <source srcset="../assets/images/ram.jpg" media="(min-width: 500px)">
-                    <img src="../assets/images/ram.jpg" alt="A man in a blue shirt with a happy expression"
-                        class="w-100">
-                </picture>
-
-            </figure>
-
-            <div class="hero-content">
-
-
-
-            </div>
-
-
-
-
-            <a href="#stats" class="scroll-down" style="pointer-events: none; cursor: default;">Scroll</a>
-
-
-        </section> -->
-        <section class="about" id="about">
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">About project</p>
-
-                <h2 class="h3 section-title">Ram Clinics App: From Web to Mobile</h2>
-
-                <p class="section-text">
-                    The Ram Clinics Booking App is a mobile solution created for a healthcare provider in Saudi Arabia.
-                    It simplifies the process of booking healthcare services across multiple locations with an
-                    intuitive, responsive interface. By transforming the hospital’s website into a mobile app, patients
-                    can easily schedule appointments, manage bookings, and access healthcare providers.
-                </p>
-
-
-            </div>
-
-            <figure class="about-banner">
-                <img src="../assets/images/ram2.jpg" alt="A man in a alice blue shirt with a thinking expression"
-                    class="w-100" style="border-radius: 20px;">
-            </figure>
-
-
-        </section>
-
-
-
-        <section class="about" id="about">
-
-            <figure class="about-banner">
-                <img src="../assets/images/ram3.jpg" alt="A man in a alice blue shirt with a thinking expression"
-                    class="w-100" style="border-radius: 20px;">
-            </figure>
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">Key Features</p>
-
-                <h2 class="h3 section-title">Healthcare Booking Made Easy</h2>
-
-                <ul class="section-text">
-
-                    <li><strong>🏥 Seamless Appointment Booking:</strong> Effortlessly book healthcare services across
-                        multiple locations via an intuitive mobile interface.</li>
-
-                    <li><strong>📍 Branch and Doctor Selection:</strong> Choose specific branches, doctors, and
-                        available time slots to tailor your healthcare experience.</li>
-
-                    <li><strong>💳 Flexible Payment Options:</strong> Integrated with installment providers, allowing
-                        patients to pay in manageable installments for better affordability.</li>
-
-                    <li><strong>📲 Cross-Platform Compatibility:</strong> Built with Flutter and Dart to deliver a
-                        seamless experience on both iOS and Android devices.</li>
-
-                    <li><strong>⚡ Real-Time Data Integration:</strong> Provides up-to-date booking status and
-                        appointment details, ensuring a smooth user experience.</li>
-
-
-                </ul>
-
-            </div>
-
-
-
-        </section>
-
-
-        <section class="skills" id="skills">
-
-
-            <div class="skills-content section-content">
-
-                <p class="section-subtitle">Tech used</p>
-
-                <h2 class="h3 section-title">Building Blocks of Ram Clinics Booking App</h2>
-
-                <p class="section-text">
-                    Discover the powerful technology stack driving the Ram Clinics Booking App. From the versatility of
-                    Flutter and Dart to the seamless data synchronization with Firebase, RESTful APIs, and efficient
-                    state management with Provider—each component works in harmony to deliver an exceptional user
-                    experience.
-                </p>
-
-
-
-            </div>
-
-
-
-            <div class="skills-box" data-skills-box>
-
-                <ul class="skills-list">
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Flutter</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/flutter.png" alt="Flutter logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Dart</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/dart.png" alt="Dart logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Firebase</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/firebase.png" alt="Firebase logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">VS Code</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/vs-code.png" alt="VS Code logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Git</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/git.png" alt="Git logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Android Studio</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/android-studio-icon1.png" alt="Android Studio logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Command Line</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/command.png" alt="Command Line logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Xcode</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/xcode.png" alt="Xcode logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Postman</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/postman.png" alt="Postman logo">
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-
-
-        </section>
-
-
-        <section class="about" id="about">
-
-
-            <div class="about-content section-content">
-                <p class="section-subtitle">Design & Development</p>
-
-                <h2 class="h3 section-title">From Concept to Creation: Design & Development</h2>
-
-                <h2 class="h4 section-title">Team Collaboration 👥</h2>
-                <p class="section-text">A dedicated team of 3 developers collaborated to ensure efficient execution and
-                    delivery of the <strong>Ram Clinics Booking App</strong>, focusing on innovation and performance.
-                </p>
-
-                <h2 class="h4 section-title">Agile Development 🔄</h2>
-                <p class="section-text">The project followed agile principles, enabling iterative development with
-                    <strong>Flutter</strong> and <strong>Dart</strong> for quick adjustments and seamless deployment.
-                </p>
-
-                <h2 class="h4 section-title">Real-Time Sync 🔥</h2>
-                <p class="section-text"><strong>Firebase</strong> was integrated for real-time data synchronization,
-                    providing up-to-date information across multiple locations and streamlining the booking process.</p>
-
-                <h2 class="h4 section-title">API Integration 🔌</h2>
-                <p class="section-text"><strong>RESTful APIs</strong> facilitated smooth data exchange between the app
-                    and backend services, ensuring robust communication across the system.</p>
-
-                <h2 class="h4 section-title">State Management ⚡</h2>
-                <p class="section-text"><strong>Provider</strong> was used for state management, optimizing performance
-                    and maintaining a smooth, consistent experience across devices.</p>
-            </div>
-            <div>
-                <h2 class="h4 section-title">Quality Assurance 🎯</h2>
-                <p class="section-text">Rigorous testing and optimization were conducted to ensure a high-performance,
-                    reliable, and user-friendly app ready for public use.</p>
-
-                <h2 class="h4 section-title">Cross-Platform Compatibility 📱</h2>
-                <p class="section-text">Built using <strong>Flutter</strong>, the app offers a seamless experience on
-                    both <strong>iOS</strong> and <strong>Android</strong> devices, reaching a wider audience.</p>
-
-                <h2 class="h4 section-title">Security 🔒</h2>
-                <p class="section-text">Industry-standard encryption protocols were implemented to safeguard user data,
-                    ensuring trust and privacy across all interactions.</p>
-
-                <h2 class="h4 section-title">Result 💡</h2>
-                <p class="section-text">The final app delivered a robust, scalable solution, leading to a
-                    <strong>30%</strong> increase in appointment bookings and improving operational efficiency and
-                    accessibility for users.
-                </p>
-            </div>
-
-
-
-
-        </section>
-
-
-
-        <section class="about" id="about">
-
-
-            <figure class="about-banner">
-                <img src="../assets/images/ram4.jpg" alt="A man in a alice blue shirt with a thinking expression"
-                    class="w-100" style="border-radius: 20px;">
-            </figure>
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">Role & Contributions</p>
-
-                <h2 class="h3 section-title">My Role and Contributions</h2>
-
-
-                <ul class="section-text">
-                    <li>🛠️ Led the technical implementation, ensuring a scalable and robust solution.</li>
-                    <li>🎨 Developed a modern, intuitive UI using Flutter and Material Design principles.</li>
-                    <li>📅 Implemented real-time synchronization for up-to-date bookings.</li>
-                    <li>⚡ Optimized app performance, increasing speed and boosting bookings by 30%.</li>
-                    <li>☁️ Integrated Firebase for secure cloud data management and real-time updates.</li>
-                    <li>🔄 Utilized Provider for efficient state management, ensuring smooth performance.</li>
-                    <li>🤝 Collaborated with a team of 3 developers to ensure seamless feature implementation.</li>
-                    <li>🏗️ Ensured scalable architecture for long-term growth and reliability.</li>
-                    <li>🔐 Implemented security best practices to protect patient data and ensure trust.</li>
-
-                </ul>
-
-            </div>
-
-
-        </section>
-
-
-
-
-        <section class="section-content-full-width" id="about">
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">Learnings</p>
-
-                <h2 class="h3 section-content-full-width-title">What I Learned 🧠</h2>
-
-
-                <p class="section-text">
-                    Through the Ram Clinics Booking App project, I gained hands-on experience in designing a complex UI
-                    with Flutter and optimizing performance using Provider for efficient state management. I integrated
-                    installment payment options, allowing users to pay in manageable installments. Collaborating with a
-                    small team refined my ability to deliver scalable, secure, high-performance applications, with a
-                    focus on usability and design quality.
-                </p>
-
-            </div>
-
-        </section>
-
-        <div style="height: 80px;"></div>
-
-    </article>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-
-            <p class="h1 logo">
-                <a href="../">
-                    Dk<span>.</span>
-                </a>
-            </p>
-
-            <p class="copyright">
-                &copy; <span id="year"></span>  <a href="../">Dilshad Kallingal</a>  
-            </p>
-              
-              <script>
-                document.getElementById('year').textContent = new Date().getFullYear();
-              </script> 
-
-            <!-- <p class="copyright">
-                &copy; 2024 <a href="../">Dilshad Kallingal</a>. All rights reserved
-            </p> -->
-        </div>
-    </footer>
-    <a href="#top" class="go-top" data-go-top title="Go to Top">
-        <ion-icon name="arrow-up"></ion-icon>
-    </a>
-    <script src="../assets/js/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="../index.html" class="site-name"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path class="s-stem" d="M6.45 5h9.5v38h-9.5Z"/><path class="s-top" d="M19.55 5A19 19 0 0 1 34.01 14.17L25.37 18.33A9.5 9.5 0 0 0 19.55 14.5Z"/><path class="s-bot" d="M34.01 33.83A19 19 0 0 1 19.55 43L19.55 33.5A9.5 9.5 0 0 0 25.37 29.67Z"/><path class="s-key" d="M38.29 16.11A22 22 0 0 1 38.29 31.89L26.94 26.43A9.5 9.5 0 0 0 26.94 21.57Z"/></g></svg>Dilshad Kallingal</a>
+      <div class="nav-right">
+        <nav class="site-nav" aria-label="Main">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#experience" class="optional">Experience</a>
+          <a href="../cv.html">CV</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <a href="../index.html#work" class="back">All work</a>
+
+    <h1>Ram Clinics</h1>
+    <p class="lead">Appointment booking app for a healthcare provider in Saudi Arabia.</p>
+
+    <div class="facts-panel">
+    <dl class="facts">
+      <dt>Period</dt>
+      <dd>May 2023 – Nov 2023</dd>
+      <dt>Company</dt>
+      <dd>Zensign LLP</dd>
+      <dt>Team</dt>
+      <dd>3 developers</dd>
+      <dt>Stack</dt>
+      <dd>Flutter, Dart, Firebase, Provider, REST APIs</dd>
+    </dl>
+    </div>
+
+    <p>
+      The app turned the clinic group's website into a mobile experience. Patients can book services across
+      multiple branches, pick a doctor and time slot, manage their bookings and pay in instalments.
+    </p>
+
+
+    <figure class="figure">
+      <p class="figure-main">30%</p>
+      <figcaption>more appointment bookings after launch</figcaption>
+    </figure>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Booking across multiple clinic locations</li>
+      <li>Branch, doctor and time slot selection</li>
+      <li>Instalment payments through integrated providers</li>
+      <li>Real-time booking status and appointment details</li>
+      <li>One codebase for iOS and Android</li>
+    </ul>
+
+    <h2>My role</h2>
+    <ul>
+      <li>Led the technical implementation and architecture.</li>
+      <li>Built the booking, calendar and payment modules.</li>
+      <li>Integrated Firebase Authentication and Firestore for real-time appointment data.</li>
+      <li>Used Provider for state management and tuned performance.</li>
+      <li>Handled App Store and Google Play releases.</li>
+    </ul>
+
+    <h2>What I learned</h2>
+    <p>
+      Designing a complex booking UI in Flutter, integrating instalment payment providers, and delivering a
+      secure healthcare app with a small team.
+    </p>
+
+    <a class="next" href="windmill.html"><span>Next project</span><b>Windmill Cellar</b></a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="sig"><svg class="sig-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M19.55 5A19 19 0 0 1 34.01 14.17L25.37 18.33A9.5 9.5 0 0 0 19.55 14.5ZM38.29 16.11A22 22 0 0 1 38.29 31.89L26.94 26.43A9.5 9.5 0 0 0 26.94 21.57ZM34.01 33.83A19 19 0 0 1 19.55 43L19.55 33.5A9.5 9.5 0 0 0 25.37 29.67ZM6.45 5h9.5v38h-9.5Z"/></svg>© Dilshad Kallingal</span>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/dilshadkallingal/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/dilshadkallingal/" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:mail@dilshadkallingal.com">Email</a></li>
+        <li><a href="#">Back to top</a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
-
 </html>

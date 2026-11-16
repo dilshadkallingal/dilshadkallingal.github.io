@@ -1,466 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spancom POS | Efficient Point-of-Sale & Inventory Management</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spancom POS, an offline Flutter POS / Dilshad Kallingal</title>
+  <meta name="description" content="Spancom POS is an offline-first Android point of sale built in Flutter for UAE businesses, cutting manual input by 50%. Case study by Dilshad Kallingal.">
+  <link rel="canonical" href="https://dilshadkallingal.com/projects/spancom.html">
+  <meta name="author" content="Dilshad Kallingal">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dilshad Kallingal">
+  <meta property="og:title" content="Spancom POS, an offline Flutter POS / Dilshad Kallingal">
+  <meta property="og:description" content="Spancom POS is an offline-first Android point of sale built in Flutter for UAE businesses, cutting manual input by 50%. Case study by Dilshad Kallingal.">
+  <meta property="og:url" content="https://dilshadkallingal.com/projects/spancom.html">
+  <meta property="og:image" content="https://dilshadkallingal.com/assets/images/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dilshad Kallingal keystone mark">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11100e" media="(prefers-color-scheme: dark)">
 
-       <!-- favicon section -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Dilshad Kallingal" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <!-- favicon section -->
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Dilshad Kallingal">
+  <link rel="manifest" href="../site.webmanifest">
 
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/motion.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
 
-    <!-- 
-    - custom css link
-  -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-    <!-- 
-    - google font link
-  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
-        rel="stylesheet">
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "@id": "https://dilshadkallingal.com/projects/spancom.html#work",
+        "name": "Spancom POS",
+        "headline": "Spancom POS",
+        "description": "Spancom POS is an offline-first Android point of sale built in Flutter for UAE businesses, cutting manual input by 50%. Case study by Dilshad Kallingal.",
+        "url": "https://dilshadkallingal.com/projects/spancom.html",
+        "inLanguage": "en",
+        "creator": { "@id": "https://dilshadkallingal.com/#person", "@type": "Person", "name": "Dilshad Kallingal", "url": "https://dilshadkallingal.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dilshadkallingal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://dilshadkallingal.com/#work" },
+          { "@type": "ListItem", "position": 3, "name": "Spancom POS", "item": "https://dilshadkallingal.com/projects/spancom.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-
-<body id="top" class="dark_theme">
-
-
-    <header class="header" data-header>
-        <div class="container">
-
-            <h1 class="h1 logo">
-                <a href="../">Dk<span>.</span></a>
-            </h1>
-
-            <div class="navbar-actions">
-
-
-
-                <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
-                    <span class="icon"></span>
-                </button>
-
-            </div>
-
-            <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
-                <span class="one"></span>
-                <span class="two"></span>
-                <span class="three"></span>
-            </button>
-
-            <nav class="navbar" data-navbar>
-                <ul class="navbar-list">
-
-                    <li>
-                        <a href="../" class="navbar-link">Home.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#about" class="navbar-link">About.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#skills" class="navbar-link">Skills.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#portfolio" class="navbar-link">Portfolio.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#contact" class="navbar-link">Contact.</a>
-                    </li>
-
-                </ul>
-            </nav>
-
-        </div>
-    </header>
-
-
-
-
-
-    <article class="container">
-
-        <!-- 
-        - #HERO
-      -->
-
-        <div style="height: 40px;"></div>
-
-
-        <!-- <section class="hero" id="home">
-
-            <figure class="hero-banner">
-
-                <picture>
-                    <source srcset="../assets/images/ram.jpg" media="(min-width: 768px)">
-                    <source srcset="../assets/images/ram.jpg" media="(min-width: 500px)">
-                    <img src="../assets/images/ram.jpg" alt="A man in a blue shirt with a happy expression"
-                        class="w-100">
-                </picture>
-
-            </figure>
-
-            <div class="hero-content">
-
-
-
-            </div>
-
-
-
-
-            <a href="#stats" class="scroll-down" style="pointer-events: none; cursor: default;">Scroll</a>
-
-
-        </section> -->
-        <section class="about" id="about">
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">About project</p>
-
-                <h2 class="h3 section-title">Spancom POS: Revolutionizing Business Operations </h2>
-
-                <p class="section-text">
-                    Spancom POS is an innovative Android-based point-of-sale system designed to streamline business
-                    operations in the UAE. By automating transaction processing and inventory management, it eliminates
-                    manual bill collection and enhances operational efficiency. The system features seamless offline
-                    functionality and cloud synchronization, ensuring businesses can rely on uninterrupted service.
-
-
-                </p>
-
-
-            </div>
-
-            <figure class="about-banner">
-                <img src="../assets/images/pos8.jpg" alt="A man in a alice blue shirt with a thinking expression"
-                    class="w-100" style="border-radius: 20px;">
-            </figure>
-
-
-        </section>
-
-
-
-        <section class="about" id="about">
-
-            <figure class="about-banner">
-                <img src="../assets/images/ram3.jpg" alt="A man in a alice blue shirt with a thinking expression"
-                    class="w-100" style="border-radius: 20px;">
-            </figure>
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">Key Features</p>
-
-                <h2 class="h3 section-title">Streamlining Transactions & Inventory Management </h2>
-
-                <ul class="section-text">
-
-                    <li><strong>💻 Efficient Transaction Management:</strong> Automates transaction processing to
-                        eliminate manual billing, reducing operational complexity and enhancing overall efficiency.</li>
-                    <li><strong>📦 Real-Time Inventory Control:</strong> Syncs inventory data across all locations,
-                        ensuring accurate stock levels and minimizing discrepancies.</li>
-                    <li><strong>📶 Offline Functionality:</strong> Built with SQLite to support offline operations,
-                        enabling businesses to continue seamlessly even without an internet connection.</li>
-                    <li><strong>☁️ Cloud Sync with Firebase:</strong> Real-time data synchronization via Firebase
-                        ensures up-to-date transactions and inventory, accessible from anywhere.</li>
-                    <li><strong>🔗 Smooth System Integration:</strong> RESTful APIs enable easy integration with
-                        existing business systems, improving workflows and data consistency.</li>
-
-
-
-                </ul>
-
-            </div>
-
-
-
-        </section>
-
-
-        <section class="skills" id="skills">
-
-
-            <div class="skills-content section-content">
-
-                <p class="section-subtitle">Tech used</p>
-
-                <h2 class="h3 section-title">The Technology Behind Seamless Operations</h2>
-
-                <p class="section-text">
-                    Spancom POS leverages an advanced technology stack to provide a seamless experience for businesses.
-                    The system combines the flexibility of Flutter and Dart for cross-platform compatibility, with
-                    SQLite for offline data management and Firebase for cloud synchronization. RxDart facilitates
-                    efficient state management, ensuring a responsive and smooth user interface, while RESTful APIs
-                    streamline integration with third-party systems.
-                </p>
-
-
-
-            </div>
-
-
-
-            <div class="skills-box" data-skills-box>
-
-                <ul class="skills-list">
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Flutter</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/flutter.png" alt="Flutter logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Dart</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/dart.png" alt="Dart logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Firebase</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/firebase.png" alt="Firebase logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">VS Code</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/vs-code.png" alt="VS Code logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Git</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/git.png" alt="Git logo">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Android Studio</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/android-studio-icon1.png" alt="Android Studio logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Command Line</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/command.png" alt="Command Line logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Xcode</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/xcode.png" alt="Xcode logo">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="skill-card">
-                            <div class="tooltip">Postman</div>
-
-                            <div class="card-icon">
-                                <img src="../assets/images/postman.png" alt="Postman logo">
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-
-
-        </section>
-
-
-        <section class="about" id="about">
-
-
-            <div class="about-content section-content">
-                <p class="section-subtitle">Design & Development</p>
-
-                <h2 class="h3 section-title">Development & Collaboration: Bringing Spancom POS to Life</h2>
-
-                <h2 class="h4 section-title">Team Collaboration 👥</h2>
-                <p class="section-text">A team of <strong>5 developers</strong> worked in unison to deliver a
-                    performance-driven, user-friendly solution that integrates seamlessly with existing business
-                    processes.</p>
-
-                <h2 class="h4 section-title">Offline & Cloud Sync ☁️</h2>
-                <p class="section-text">SQLite ensures offline functionality, while Firebase provides secure, real-time
-                    cloud synchronization for uninterrupted service.</p>
-
-                <h2 class="h4 section-title">API Integration 🔗</h2>
-                <p class="section-text">RESTful APIs were used to ensure smooth communication between Spancom POS and
-                    external services, optimizing workflows.</p>
-
-
-                <h2 class="h4 section-title">State Management 🔄</h2>
-                <p class="section-text">RxDart and Provider were employed to handle asynchronous data flows efficiently,
-                    ensuring a smooth and responsive user interface.</p>
-
-
-            </div>
-            <div>
-
-
-
-                <h2 class="h4 section-title">Cross-Platform Compatibility 📱</h2>
-                <p class="section-text">Built with Flutter, Spancom POS ensures a unified and consistent experience on
-                    Android devices.</p>
-
-                <h2 class="h4 section-title">Security 🔒</h2>
-                <p class="section-text">Standard encryption protocols were implemented to protect sensitive transaction
-                    and inventory data, ensuring privacy and security.</p>
-            </div>
-
-
-
-
-        </section>
-
-
-
-        <section class="about" id="about">
-
-
-            <figure class="about-banner">
-                <img src="../assets/images/pos7.jpg" alt="A man in a alice blue shirt with a thinking expression"
-                    class="w-100" style="border-radius: 20px;">
-            </figure>
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">Role & Contributions</p>
-
-                <h2 class="h3 section-title">My Role and Contributions</h2>
-
-
-                <ul class="section-text">
-
-                    <li>🖥️ Designed and developed an intuitive, modern user interface using Flutter and Material Design
-                        principles.</li>
-                    <li>🔄 Implemented Firebase for seamless real-time data synchronization, ensuring up-to-date
-                        transaction and inventory management.</li>
-                    <li>⚡ Enhanced app performance by reducing loading times and improving transaction speeds for a more
-                        efficient user experience.</li>
-                    <li>🔧 Utilized RxDart and Provider for efficient state management, ensuring smooth transitions and
-                        data flow.</li>
-                    <li>🤝 Worked alongside a team of 5 developers to tackle challenges and deliver features
-                        efficiently.</li>
-                    <li>🔐 Applied industry-standard security measures to safeguard sensitive business data, building
-                        trust with users.</li>
-
-
-                </ul>
-
-            </div>
-
-
-        </section>
-
-
-
-
-        <section class="section-content-full-width" id="about">
-
-            <div class="about-content section-content">
-
-                <p class="section-subtitle">Learnings</p>
-
-                <h2 class="h3 section-content-full-width-title">Key Learnings & Takeaways 🧠</h2>
-
-
-                <p class="section-text">
-
-
-                    Working on Spancom POS, I gained valuable insights into offline app development and real-time data
-                    synchronization using SQLite and Firebase. I honed my skills in state management and performance
-                    optimization with RxDart and Provider, ensuring a seamless user experience. This project reinforced
-                    the importance of automating business processes and delivering efficient, secure, and scalable
-                    solutions.
-                </p>
-
-            </div>
-
-        </section>
-
-        <div style="height: 80px;"></div>
-
-    </article>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-
-            <p class="h1 logo">
-                <a href="../">
-                    Dk<span>.</span>
-                </a>
-            </p>
-
-            <p class="copyright">
-                &copy; <span id="year"></span>  <a href="../">Dilshad Kallingal</a>    
-            </p>
-              
-              <script>
-                document.getElementById('year').textContent = new Date().getFullYear();
-              </script> 
-
-            <!-- <p class="copyright">
-                &copy; 2024 <a href="../">Dilshad Kallingal</a>. All rights reserved
-            </p> -->
-        </div>
-    </footer>
-    <a href="#top" class="go-top" data-go-top title="Go to Top">
-        <ion-icon name="arrow-up"></ion-icon>
-    </a>
-    <script src="../assets/js/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="../index.html" class="site-name"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path class="s-stem" d="M6.45 5h9.5v38h-9.5Z"/><path class="s-top" d="M19.55 5A19 19 0 0 1 34.01 14.17L25.37 18.33A9.5 9.5 0 0 0 19.55 14.5Z"/><path class="s-bot" d="M34.01 33.83A19 19 0 0 1 19.55 43L19.55 33.5A9.5 9.5 0 0 0 25.37 29.67Z"/><path class="s-key" d="M38.29 16.11A22 22 0 0 1 38.29 31.89L26.94 26.43A9.5 9.5 0 0 0 26.94 21.57Z"/></g></svg>Dilshad Kallingal</a>
+      <div class="nav-right">
+        <nav class="site-nav" aria-label="Main">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#experience" class="optional">Experience</a>
+          <a href="../cv.html">CV</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <a href="../index.html#work" class="back">All work</a>
+
+    <h1>Spancom POS</h1>
+    <p class="lead">Offline-first Android point of sale for businesses in the UAE.</p>
+
+    <div class="facts-panel">
+    <dl class="facts">
+      <dt>Period</dt>
+      <dd>Feb 2021 – Oct 2022</dd>
+      <dt>Company</dt>
+      <dd>Devmonkey Inc</dd>
+      <dt>Team</dt>
+      <dd>5 developers</dd>
+      <dt>Stack</dt>
+      <dd>Flutter, Dart, SQLite, Firebase, RxDart, Provider, REST APIs</dd>
+    </dl>
+    </div>
+
+    <p>
+      Spancom POS automates billing and inventory so businesses no longer collect bills by hand. It keeps
+      working without a connection and syncs to the cloud when one is available.
+    </p>
+
+
+    <figure class="figure">
+      <p class="figure-main">50%</p>
+      <figcaption>less manual input and fewer errors</figcaption>
+    </figure>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Automated transaction processing and billing</li>
+      <li>Inventory synced across locations</li>
+      <li>Full offline operation with SQLite</li>
+      <li>Cloud sync through Firebase</li>
+      <li>REST APIs for integration with existing business systems</li>
+    </ul>
+
+    <h2>My role</h2>
+    <ul>
+      <li>Designed and built the UI with Flutter and Material Design.</li>
+      <li>Built the sync engine between local SQLite and Firebase.</li>
+      <li>Used RxDart and Provider for asynchronous data flows.</li>
+      <li>Improved load times and transaction speed.</li>
+      <li>Managed sprint backlogs and wrote unit and integration tests.</li>
+    </ul>
+
+    <h2>What I learned</h2>
+    <p>
+      Offline-first architecture, keeping data in sync between SQLite and Firebase, and performance tuning
+      with RxDart and Provider.
+    </p>
+
+    <a class="next" href="talkomi.html"><span>Next project</span><b>Talkomi</b></a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="sig"><svg class="sig-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M19.55 5A19 19 0 0 1 34.01 14.17L25.37 18.33A9.5 9.5 0 0 0 19.55 14.5ZM38.29 16.11A22 22 0 0 1 38.29 31.89L26.94 26.43A9.5 9.5 0 0 0 26.94 21.57ZM34.01 33.83A19 19 0 0 1 19.55 43L19.55 33.5A9.5 9.5 0 0 0 25.37 29.67ZM6.45 5h9.5v38h-9.5Z"/></svg>© Dilshad Kallingal</span>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/dilshadkallingal/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/dilshadkallingal/" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:mail@dilshadkallingal.com">Email</a></li>
+        <li><a href="#">Back to top</a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
-
 </html>

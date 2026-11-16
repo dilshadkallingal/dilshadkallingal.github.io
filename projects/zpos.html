@@ -1,566 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZPOS | AI-Powered POS System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZPOS, a Flutter point of sale / Dilshad Kallingal</title>
+  <meta name="description" content="ZPOS is a cloud point of sale for a UK retailer, built in Flutter. Billing became 40% faster and stock discrepancies fell 35%. Case study by Dilshad Kallingal.">
+  <link rel="canonical" href="https://dilshadkallingal.com/projects/zpos.html">
+  <meta name="author" content="Dilshad Kallingal">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dilshad Kallingal">
+  <meta property="og:title" content="ZPOS, a Flutter point of sale / Dilshad Kallingal">
+  <meta property="og:description" content="ZPOS is a cloud point of sale for a UK retailer, built in Flutter. Billing became 40% faster and stock discrepancies fell 35%. Case study by Dilshad Kallingal.">
+  <meta property="og:url" content="https://dilshadkallingal.com/projects/zpos.html">
+  <meta property="og:image" content="https://dilshadkallingal.com/assets/images/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dilshad Kallingal keystone mark">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11100e" media="(prefers-color-scheme: dark)">
 
-      <!-- favicon section -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Dilshad Kallingal" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <!-- favicon section -->
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Dilshad Kallingal">
+  <link rel="manifest" href="../site.webmanifest">
 
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/motion.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
 
-    <!-- 
-    - custom css link
-  -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-    <!-- 
-    - google font link
-  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
-        rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "@id": "https://dilshadkallingal.com/projects/zpos.html#work",
+        "name": "ZPOS",
+        "headline": "ZPOS",
+        "description": "ZPOS is a cloud point of sale for a UK retailer, built in Flutter. Billing became 40% faster and stock discrepancies fell 35%. Case study by Dilshad Kallingal.",
+        "url": "https://dilshadkallingal.com/projects/zpos.html",
+        "inLanguage": "en",
+        "creator": { "@id": "https://dilshadkallingal.com/#person", "@type": "Person", "name": "Dilshad Kallingal", "url": "https://dilshadkallingal.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dilshadkallingal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://dilshadkallingal.com/#work" },
+          { "@type": "ListItem", "position": 3, "name": "ZPOS", "item": "https://dilshadkallingal.com/projects/zpos.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-
-<body id="top" class="dark_theme">
-
-    <!-- 
-    - #HEADER
-  -->
-
-    <header class="header" data-header>
-        <div class="container">
-
-            <h1 class="h1 logo">
-                <a href="../">Dk<span>.</span></a>
-            </h1>
-
-            <div class="navbar-actions">
-
-
-
-                <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
-                    <span class="icon"></span>
-                </button>
-
-            </div>
-
-            <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
-                <span class="one"></span>
-                <span class="two"></span>
-                <span class="three"></span>
-            </button>
-
-            <nav class="navbar" data-navbar>
-                <ul class="navbar-list">
-
-                    <li>
-                        <a href="../" class="navbar-link">Home.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#about" class="navbar-link">About.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#skills" class="navbar-link">Skills.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#portfolio" class="navbar-link">Portfolio.</a>
-                    </li>
-
-                    <li>
-                        <a href="../#contact" class="navbar-link">Contact.</a>
-                    </li>
-
-                </ul>
-            </nav>
-
-        </div>
-    </header>
-
-
-
-
-
-    <main>
-        <article class="container">
-
-            <!-- 
-        - #HERO
-      -->
-
-            <!-- <div style="height: 80px;"></div> -->
-
-
-            <!-- <section class="hero" id="home">
-
-                <figure class="hero-banner">
-
-                    <picture>
-                        <source srcset="../assets/images/pos5.jpg" media="(min-width: 768px)">
-                        <source srcset="../assets/images/pos5.jpg" media="(min-width: 500px)">
-                        <img src="../assets/images/pos5.jpg" alt="A man in a blue shirt with a happy expression"
-                            class="w-100">
-                    </picture>
-
-                </figure>
-
-                <div class="hero-content">
-
-
-
-                </div>
-
-
-
-
-                <a href="#stats" class="scroll-down" style="pointer-events: none; cursor: default;">Scroll</a>
-
-
-            </section> -->
-
-
-
-
-
-
-
-
-
-
-
-            <!-- 
-        - #ABOUT
-      -->
-
-
-
-
-            <section class="about" id="about">
-
-
-
-
-
-                <div class="about-content section-content">
-
-                    <p class="section-subtitle">About project</p>
-
-                    <h2 class="h3 section-title">ZPOS: From Concept to Code</h2>
-
-                    <p class="section-text">
-                        ZPOS is a real-time, cloud-based system designed for a UK-based client. It simplifies billing,
-                        inventory management, and user controls through an intuitive and efficient interface. By
-                        streamlining
-                        complex processes and providing real-time insights, ZPOS enhances operational efficiency,
-                        ensuring
-                        businesses can manage transactions effortlessly and stay on top of their inventory. This makes
-                        it an ideal
-                        solution for modern retail and service environments.
-                    </p>
-
-
-                </div>
-
-                <figure class="about-banner">
-                    <img src="../assets/images/pos3.png" alt="A man in a alice blue shirt with a thinking expression"
-                        class="w-100">
-                </figure>
-
-
-            </section>
-
-
-
-            <section class="about" id="about">
-
-                <figure class="about-banner">
-                    <img src="../assets/images/pos2.png" alt="A man in a alice blue shirt with a thinking expression"
-                        class="w-100">
-                </figure>
-
-                <div class="about-content section-content">
-
-                    <p class="section-subtitle">Key Features</p>
-
-                    <h2 class="h3 section-title">Empowering Businesses with Advanced Features</h2>
-
-                    <ul class="section-text">
-
-                        <li>🚀 <strong>AI-Powered Sales Optimization:</strong> Enhances sales efficiency by using
-                            AI-driven
-                            insights to optimize performance and drive growth.</li>
-                        <li>📊 <strong>Real-Time Data & Analytics:</strong> Access up-to-date sales and inventory data
-                            for accurate
-                            decision-making and performance.</li>
-                        <li>🌐 <strong>Cloud-Based Accessibility:</strong> Manage your business from anywhere, at any
-                            time, with
-                            secure cloud-based access and flexibility.</li>
-                        <li>🔧 <strong>Customizable Solutions:</strong> Tailored to fit the unique needs and goals of
-                            your business,
-                            ensuring better operational efficiency.</li>
-                        <li>🔒 <strong>Enhanced Security:</strong> Protects your valuable data with advanced encryption,
-                            ensuring
-                            privacy and minimizing potential security risks.</li>
-                        <li>💸 <strong>Cost-Effective:</strong> Significantly reduces operational costs, increases
-                            productivity, and
-                            boosts overall ROI for better business growth.</li>
-
-                    </ul>
-
-                </div>
-
-
-
-            </section>
-
-
-            <section class="skills" id="skills">
-
-
-                <div class="skills-content section-content">
-
-                    <p class="section-subtitle">Tech used</p>
-
-                    <h2 class="h3 section-title">The Tech Arsenal: Powering ZPOS</h2>
-
-                    <p class="section-text">
-
-                        Discover the robust stack of technologies that make ZPOS a powerful tool for businesses. From
-                        the
-                        flexibility of Flutter and Dart, the seamless data synchronization of Firebase, to the
-                        efficiency of RESTful
-                        APIs and the reactive programming prowess of RxDart—each element works in harmony to deliver an
-                        exceptional
-                        user experience.
-                    </p>
-
-
-
-                </div>
-
-
-
-                <div class="skills-box" data-skills-box>
-
-                    <ul class="skills-list">
-
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Flutter</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/flutter.png" alt="Flutter logo">
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Dart</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/dart.png" alt="Dart logo">
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Firebase</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/firebase.png" alt="Firebase logo">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">VS Code</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/vs-code.png" alt="VS Code logo">
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Git</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/git.png" alt="Git logo">
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Android Studio</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/android-studio-icon1.png" alt="Android Studio logo">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Command Line</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/command.png" alt="Command Line logo">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Xcode</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/xcode.png" alt="Xcode logo">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-card">
-                                <div class="tooltip">Postman</div>
-
-                                <div class="card-icon">
-                                    <img src="../assets/images/postman.png" alt="Postman logo">
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-
-            </section>
-
-
-            <section class="about" id="about">
-
-
-                <div class="about-content section-content">
-                    <p class="section-subtitle">Design & Development</p>
-
-                    <h2 class="h3 section-title">Design & Development Process</h2>
-
-
-                    <h2 class="h4 section-title">Team Collaboration 👥</h2>
-                    <p class="section-text">A dedicated team of 5 developers collaborated to ensure smooth execution and
-                        delivery
-                        of the project.</p>
-
-
-                    <h2 class="h4 section-title">Agile Development 🔄</h2>
-                    <p class="section-text">Using agile methodologies, the project was developed iteratively with
-                        Flutter and
-                        Dart, enabling quick and efficient deployment.</p>
-
-
-                    <h2 class="h4 section-title">Real-Time Sync 🔥</h2>
-                    <p class="section-text">Firebase was integrated for real-time data synchronization, ensuring
-                        consistent and
-                        up-to-date information across the system.</p>
-
-                    <h2 class="h4 section-title">API Integration 🔌</h2>
-                    <p class="section-text">RESTful APIs were implemented for robust data communication between system
-                        components.
-                    </p>
-
-
-                    <h2 class="h4 section-title">Reactive Programming ⚡</h2>
-                    <p class="section-text">State management was handled using RxDart, enhancing application performance
-                        through
-                        reactive programming techniques.</p>
-
-
-
-
-                </div>
-
-                <div>
-
-
-
-                    <h2 class="h4 section-title">Quality Assurance 🎯</h2>
-                    <p class="section-text">Rigorous testing and optimization processes ensured the highest standards of
-                        quality,
-                        performance, and reliability.</p>
-
-
-
-                    <h2 class="h4 section-title">Cross-Platform Compatibility 📱</h2>
-                    <p class="section-text">Designed to offer a seamless user experience on both iOS and Android
-                        devices.
-                    </p>
-
-
-                    <h2 class="h4 section-title">Security 🔒</h2>
-                    <p class="section-text">Industry-standard security protocols were applied to protect data and ensure
-                        user
-                        trust.</p>
-
-
-
-                    <h2 class="h4 section-title">Result 💡</h2>
-                    <p class="section-text">The final solution is a robust and scalable system that improved business
-                        efficiency
-                        by over 40%.
-                    </p>
-
-
-                </div>
-
-
-            </section>
-
-
-
-            <section class="about" id="about">
-
-
-                <figure class="about-banner">
-                    <img src="../assets/images/pos6.jpg" alt="A man in a alice blue shirt with a thinking expression"
-                        class="w-100" style="border-radius: 20px;">
-                </figure>
-
-                <div class="about-content section-content">
-
-                    <p class="section-subtitle">Role & Contributions</p>
-
-                    <h2 class="h3 section-title">My Role and Contributions</h2>
-
-
-                    <ul class="section-text">
-                        <li>🔧 Led the technical implementation, ensuring robust and scalable solutions.</li>
-                        <li>🎨 Developed a modern, intuitive UI with Flutter and Material Design principles.</li>
-                        <li>📈 Implemented real-time inventory synchronization, reducing stock discrepancies by 35%.
-                        </li>
-                        <li>⚡ Optimized the billing process, improving speed by 40%.</li>
-                        <li>☁️ Integrated Firebase for cloud data management and real-time updates.</li>
-                        <li>🔄 Utilized RxDart for advanced state management and reactive programming.</li>
-                        <li>🤝 Collaborated with the team to ensure seamless feature implementation.</li>
-                        <li>🏗️ Ensured high-performance and scalable architecture for long-term reliability.</li>
-                        <li>🧠 Implemented advanced features like AI-powered sales optimization and comprehensive
-                            analytics.</li>
-                    </ul>
-
-                </div>
-
-
-            </section>
-
-
-
-
-            <section class="section-content-full-width" id="about">
-
-                <div class="about-content section-content">
-
-                    <p class="section-subtitle">Learnings</p>
-
-                    <h2 class="h3 section-content-full-width-title">What I Learned 🧠</h2>
-
-
-                    <p class="section-text">Through the ZPOS project, I gained expertise in reactive state management
-                        with
-                        RxDart, real-time data handling with Firebase, and efficient API integration. Working in an
-                        agile team
-                        sharpened my collaboration and performance optimization skills, enhancing my ability to deliver
-                        secure,
-                        scalable, and high-quality applications.</p>
-
-                </div>
-
-            </section>
-
-            <div style="height: 80px;"></div>
-
-
-
-
-
-
-        </article>
-    </main>
-
-
-
-
-
-    <!-- 
-    - #FOOTER
-  -->
-
-    <footer class="footer">
-        <div class="container">
-
-            <p class="h1 logo">
-                <a href="../">
-                    Dk<span>.</span>
-                </a>
-            </p>
-
-            <!-- <p class="copyright">
-                &copy; 2024 <a href="../">Dilshad Kallingal</a>. All rights reserved
-            </p> -->
-           
-        <p class="copyright">
-            &copy; <span id="year"></span>  <a href="../">Dilshad Kallingal</a>    
-        </p>
-        
-        <script>
-          document.getElementById('year').textContent = new Date().getFullYear();
-        </script> 
-
-
-
-
-        </div>
-    </footer>
-
-
-
-
-
-    <!-- 
-    - #GO TO TOP
-  -->
-
-    <a href="#top" class="go-top" data-go-top title="Go to Top">
-        <ion-icon name="arrow-up"></ion-icon>
-    </a>
-
-
-
-
-
-    <!-- 
-    - custom js link
-  -->
-    <script src="../assets/js/script.js"></script>
-
-    <!-- 
-    - ionicon link
-  -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="../index.html" class="site-name"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path class="s-stem" d="M6.45 5h9.5v38h-9.5Z"/><path class="s-top" d="M19.55 5A19 19 0 0 1 34.01 14.17L25.37 18.33A9.5 9.5 0 0 0 19.55 14.5Z"/><path class="s-bot" d="M34.01 33.83A19 19 0 0 1 19.55 43L19.55 33.5A9.5 9.5 0 0 0 25.37 29.67Z"/><path class="s-key" d="M38.29 16.11A22 22 0 0 1 38.29 31.89L26.94 26.43A9.5 9.5 0 0 0 26.94 21.57Z"/></g></svg>Dilshad Kallingal</a>
+      <div class="nav-right">
+        <nav class="site-nav" aria-label="Main">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#experience" class="optional">Experience</a>
+          <a href="../cv.html">CV</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <a href="../index.html#work" class="back">All work</a>
+
+    <h1>ZPOS</h1>
+    <p class="lead">Cloud-based point of sale for a UK retail client.</p>
+
+    <div class="facts-panel">
+    <dl class="facts">
+      <dt>Period</dt>
+      <dd>Nov 2023 – Feb 2025</dd>
+      <dt>Company</dt>
+      <dd>Zensign LLP</dd>
+      <dt>Team</dt>
+      <dd>5 developers</dd>
+      <dt>Stack</dt>
+      <dd>Flutter, Dart, Firebase, RxDart, REST APIs</dd>
+    </dl>
+    </div>
+
+    <p>
+      ZPOS is a real-time, cloud-based system that handles billing, inventory and user controls in one
+      interface. It gives store staff live sales and stock data so they can manage transactions and inventory
+      without switching tools.
+    </p>
+
+    <figure class="figure">
+      <p class="figure-main">40%</p>
+      <figcaption>faster billing, with stock discrepancies down 35%</figcaption>
+    </figure>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Real-time sales and inventory data</li>
+      <li>Cloud access from any location</li>
+      <li>Sales insights to help optimise performance</li>
+      <li>Configurable to each business's workflow</li>
+      <li>Encrypted data and user access controls</li>
+    </ul>
+
+    <h2>My role</h2>
+    <ul>
+      <li>Led the technical implementation and architecture.</li>
+      <li>Built the UI with Flutter and Material Design.</li>
+      <li>Implemented real-time inventory sync with Firebase, cutting stock discrepancies by 35%.</li>
+      <li>Optimised the billing flow, making it 40% faster.</li>
+      <li>Used RxDart for reactive state management.</li>
+      <li>Ran code reviews and mentored junior developers.</li>
+    </ul>
+
+    <h2>What I learned</h2>
+    <p>
+      Reactive state management with RxDart, real-time data handling with Firebase, and keeping a
+      five-person agile team aligned on performance and code quality.
+    </p>
+
+    <a class="next" href="ram.html"><span>Next project</span><b>Ram Clinics</b></a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="sig"><svg class="sig-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M19.55 5A19 19 0 0 1 34.01 14.17L25.37 18.33A9.5 9.5 0 0 0 19.55 14.5ZM38.29 16.11A22 22 0 0 1 38.29 31.89L26.94 26.43A9.5 9.5 0 0 0 26.94 21.57ZM34.01 33.83A19 19 0 0 1 19.55 43L19.55 33.5A9.5 9.5 0 0 0 25.37 29.67ZM6.45 5h9.5v38h-9.5Z"/></svg>© Dilshad Kallingal</span>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/dilshadkallingal/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/dilshadkallingal/" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:mail@dilshadkallingal.com">Email</a></li>
+        <li><a href="#">Back to top</a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
-
 </html>

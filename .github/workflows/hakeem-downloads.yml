@@ -1,0 +1,48 @@
+# Keeps the Hakeem page's "10K+ downloads" figure in step with its public Google Play listing.
+# Runs weekly (and on demand from the Actions tab). Commits only when the tier changes.
+# If the listing can't be read, the run fails visibly and the site keeps its last good figure.
+name: Update Hakeem downloads
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC (09:00 in Doha)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: hakeem-downloads
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read the download tier from Google Play
+        run: bash .github/scripts/update-hakeem-downloads.sh projects/hakeem.html
+
+      - name: Commit if it changed
+        id: commit
+        run: |
+          if git diff --quiet -- projects/hakeem.html; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projects/hakeem.html
+          git commit -m "Update Hakeem downloads from Google Play"
+          git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # The site is published from the main branch. Commits made with the workflow's own token may not
+      # start a Pages build by themselves, so ask for one explicitly.
+      - name: Rebuild the site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Could not request a Pages build; check Settings > Pages."
